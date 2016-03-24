@@ -20,6 +20,10 @@ public class Dog {
     static private int total = 0;
     private int sequence;
 
+    public int getSequence() {
+        return sequence;
+    }
+
     public HashSet<String> getOwner() {
         return owner;
     }
