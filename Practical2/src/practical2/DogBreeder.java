@@ -18,6 +18,8 @@ public class DogBreeder {
         
         System.out.println("Starting dog application");
         
+        Dog.printTotal();
+        
         Dog myDog1 = new Dog();
         Dog myDog2 = new Dog( "Fluffy", "Poodle", 3496);
         
@@ -32,6 +34,8 @@ public class DogBreeder {
         System.out.println(myDog1);
         System.out.println(myDog1.getName());
         System.out.println(myDog2.getName());
+        
+        Dog.printTotal();
         
         // TODO code application logic here
     }

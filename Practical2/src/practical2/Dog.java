@@ -12,11 +12,13 @@ import java.util.HashSet;
  * @author k
  */
 public class Dog {
-    
+
     private int regNum = -1;
     private String dogBreed = "unknown";
     private String name = "unknown";
     private HashSet<String> owner;
+    static private int total = 0;
+    private int sequence;
 
     public HashSet<String> getOwner() {
         return owner;
@@ -25,10 +27,10 @@ public class Dog {
     public void addOwner(String owner1) {
         this.owner.add(owner1);
     }
-    
-    public String toString(){
-        return "Dog " + name + ", Class = " + dogBreed + ", #owners " + owner.size() +", Registration # = "
-                + regNum;
+
+    public String toString() {
+        return "Dog " + name + ", Class = " + dogBreed + ", #owners " + owner.size() + ", Registration # = "
+                + regNum + ", Sequence # = " + sequence;
     }
 
     public int getRegNum() {
@@ -54,15 +56,23 @@ public class Dog {
     public void setName(String name) {
         this.name = name;
     }
-       
+
     public Dog() {
         owner = new HashSet();
+        total++;
+        sequence = total;
     }
-    
-    public Dog(String dName, String dBreed, int dnum){
+
+    public Dog(String dName, String dBreed, int dnum) {
         name = dName;
         dogBreed = dBreed;
         regNum = dnum;
         owner = new HashSet();
+        total++;
+        sequence = total;
+    }
+
+    public static void printTotal() {
+        System.out.println("Total number of dogs bred: " + total);
     }
 }
