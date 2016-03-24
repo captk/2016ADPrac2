@@ -7,6 +7,8 @@ package practical2;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
+import java.util.TreeSet;
 
 /**
  *
@@ -15,10 +17,10 @@ import java.util.HashSet;
 public class DogRegister {
 
     //gonna be lazy and use HashSet all day
-    private HashSet<Dog> register;
+    private TreeSet<Dog> register;
 
     public DogRegister() {
-        this.register = new HashSet();
+        this.register = new TreeSet();
     }
 
     public void addDog(Dog dog) {
@@ -36,6 +38,7 @@ public class DogRegister {
     }
 
     //also slow af. Still don't care
+    //Deletes dogs by their sequence number
     public Dog deleteDog(int seqNo) {
         for (Dog dog : register) {
             if (dog.getSequence() == seqNo) {
@@ -57,6 +60,10 @@ public class DogRegister {
         }
         
         return dogPile;
+    }
+    
+    public void groupByBreed(){
+        
     }
     
     public String toString() {

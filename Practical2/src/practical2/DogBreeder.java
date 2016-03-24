@@ -38,12 +38,12 @@ public class DogBreeder {
         System.out.println(myDog2.getName());
 
         Dog.printTotal();
-
+        
         register.addDog(myDog1);
         register.addDog(myDog2);
 
         //breed army of dogs
-        for (int i = 1; i  <=  5000; i++) {
+        for (int i = 1; i  <=  50; i++) {
             register.addDog(new Dog(Integer.toString(i), 
                     Integer.toString(i % 5), i));
         }
@@ -51,12 +51,12 @@ public class DogBreeder {
         Dog.printTotal();
         
         System.out.println(register);
-        System.out.println(register.getDog(49));
+        System.out.println(register.getDog(4));
         System.out.println(register.getDog(1));
         System.out.println(register.getDog(50000));
         
         //canine culling
-        for (int i = 500; i <2000; i++){
+        for (int i = 5; i <30; i++){
             System.out.println("Dog deleted:");
             System.out.println(register.deleteDog(i));
         }

@@ -11,7 +11,7 @@ import java.util.HashSet;
  *
  * @author k
  */
-public class Dog {
+public class Dog implements Comparable{
 
     private int regNum = -1;
     private String dogBreed = "unknown";
@@ -78,5 +78,11 @@ public class Dog {
 
     public static void printTotal() {
         System.out.println("Total number of dogs bred: " + total);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return this.dogBreed.compareTo(((Dog)o).getName());
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
