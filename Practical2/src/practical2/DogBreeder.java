@@ -64,6 +64,11 @@ public class DogBreeder {
         Dog.printTotal();
         System.out.println(register.deleteDog(9000));
         System.out.println(register);
+        
+        System.out.println(register.getDogsWhoseNameContains("2198"));
+        System.out.println(register.getDogsWhoseNameContains("234"));
+        System.out.println(register.getDogsWhoseNameContains("0"));
+        System.out.println(register.getDogsWhoseNameContains("21980"));
         // TODO code application logic here
     }
 

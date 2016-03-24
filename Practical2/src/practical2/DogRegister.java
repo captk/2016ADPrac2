@@ -5,6 +5,7 @@
  */
 package practical2;
 
+import java.util.Collection;
 import java.util.HashSet;
 
 /**
@@ -45,6 +46,19 @@ public class DogRegister {
         return null;
     }
 
+    //lawl, gonna return a HashSet. I'm so lazy...
+    public Collection<Dog> getDogsWhoseNameContains(String charSequence){
+        HashSet<Dog> dogPile = new HashSet();
+        
+        for(Dog dog: register){
+            if (dog.getName().contains(charSequence)){
+                dogPile.add(dog);
+            }
+        }
+        
+        return dogPile;
+    }
+    
     public String toString() {
         return "Register has " + register.size() + " dogs.";
     }
