@@ -5,6 +5,8 @@
  */
 package practical2;
 
+import java.util.HashSet;
+
 /**
  *
  * @author k
@@ -14,10 +16,18 @@ public class Dog {
     private int regNum = -1;
     private String dogBreed = "unknown";
     private String name = "unknown";
-    
+    private HashSet<String> owner;
+
+    public HashSet<String> getOwner() {
+        return owner;
+    }
+
+    public void addOwner(String owner1) {
+        this.owner.add(owner1);
+    }
     
     public String toString(){
-        return "Dog " + name + ", Class = " + dogBreed + ", Registration # = "
+        return "Dog " + name + ", Class = " + dogBreed + ", #owners " + owner.size() +", Registration # = "
                 + regNum;
     }
 
@@ -46,11 +56,13 @@ public class Dog {
     }
        
     public Dog() {
+        owner = new HashSet();
     }
     
     public Dog(String dName, String dBreed, int dnum){
         name = dName;
         dogBreed = dBreed;
         regNum = dnum;
+        owner = new HashSet();
     }
 }

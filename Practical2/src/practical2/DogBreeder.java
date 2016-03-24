@@ -23,6 +23,16 @@ public class DogBreeder {
         
         System.out.println(myDog1);
         System.out.println(myDog2);
+        
+        myDog1.setName("Fido");
+        myDog1.addOwner("Anne");
+        myDog1.addOwner("Bob");
+        myDog2.addOwner("Martha");
+        
+        System.out.println(myDog1);
+        System.out.println(myDog1.getName());
+        System.out.println(myDog2.getName());
+        
         // TODO code application logic here
     }
     
