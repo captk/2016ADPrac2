@@ -12,28 +12,40 @@ import java.util.HashSet;
  * @author k
  */
 public class DogRegister {
+
     //gonna be lazy and use HashSet all day
     private HashSet<Dog> register;
 
     public DogRegister() {
         this.register = new HashSet();
     }
-    
-    public void addDog(Dog dog){
+
+    public void addDog(Dog dog) {
         register.add(dog);
     }
-    
+
     //slow af. Don't care.
-    public Dog getDog(int seqNo){
-        for (Dog dog: register){
-            if (dog.getSequence() == seqNo){
+    public Dog getDog(int seqNo) {
+        for (Dog dog : register) {
+            if (dog.getSequence() == seqNo) {
                 return dog;
             }
         }
         return null;
     }
-    
-    public String toString(){
+
+    //also slow af. Still don't care
+    public Dog deleteDog(int seqNo) {
+        for (Dog dog : register) {
+            if (dog.getSequence() == seqNo) {
+                register.remove(dog);
+                return dog;
+            }
+        }
+        return null;
+    }
+
+    public String toString() {
         return "Register has " + register.size() + " dogs.";
     }
 }

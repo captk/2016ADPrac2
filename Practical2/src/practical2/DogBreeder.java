@@ -54,6 +54,16 @@ public class DogBreeder {
         System.out.println(register.getDog(49));
         System.out.println(register.getDog(1));
         System.out.println(register.getDog(50000));
+        
+        //canine culling
+        for (int i = 500; i <2000; i++){
+            System.out.println("Dog deleted:");
+            System.out.println(register.deleteDog(i));
+        }
+        
+        Dog.printTotal();
+        System.out.println(register.deleteDog(9000));
+        System.out.println(register);
         // TODO code application logic here
     }
 
