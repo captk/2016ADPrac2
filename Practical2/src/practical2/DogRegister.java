@@ -5,6 +5,7 @@
  */
 package practical2;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -17,10 +18,12 @@ import java.util.TreeSet;
 public class DogRegister {
 
     //gonna be lazy and use HashSet all day
-    private TreeSet<Dog> register;
+    //welp, this thing can't be a set so i'll use
+    //arraylists
+    private ArrayList<Dog> register;
 
     public DogRegister() {
-        this.register = new TreeSet();
+        this.register = new ArrayList();
     }
 
     public void addDog(Dog dog) {
@@ -50,23 +53,31 @@ public class DogRegister {
     }
 
     //lawl, gonna return a HashSet. I'm so lazy...
-    public Collection<Dog> getDogsWhoseNameContains(String charSequence){
+    public Collection<Dog> getDogsWhoseNameContains(String charSequence) {
         HashSet<Dog> dogPile = new HashSet();
-        
-        for(Dog dog: register){
-            if (dog.getName().contains(charSequence)){
+
+        for (Dog dog : register) {
+            if (dog.getName().contains(charSequence)) {
                 dogPile.add(dog);
             }
         }
-        
+
         return dogPile;
     }
-    
-    public void groupByBreed(){
-        
+
+    //God damn this method to hell
+    //This method will use the DogComparator to sort the arraylist by breed
+    public void groupByBreed() {
+        this.register.sort(new DogComparator());
     }
-    
+
     public String toString() {
         return "Register has " + register.size() + " dogs.";
+    }
+
+    public void printDogBreed() {
+        for (Dog aDog : this.register) {
+            System.out.println(aDog.getDogBreed());
+        }
     }
 }

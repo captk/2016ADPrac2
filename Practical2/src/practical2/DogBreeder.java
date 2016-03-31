@@ -22,12 +22,14 @@ public class DogBreeder {
 
         Dog.printTotal();
 
+        System.out.println("\nAdding two dogs");
         Dog myDog1 = new Dog();
         Dog myDog2 = new Dog("Fluffy", "Poodle", 3496);
 
         System.out.println(myDog1);
         System.out.println(myDog2);
 
+        System.out.println("\nSetting some dog parameters");
         myDog1.setName("Fido");
         myDog1.addOwner("Anne");
         myDog1.addOwner("Bob");
@@ -39,10 +41,12 @@ public class DogBreeder {
 
         Dog.printTotal();
         
+        System.out.println("\nAdding two dogs to register");
         register.addDog(myDog1);
         register.addDog(myDog2);
 
         //breed army of dogs
+        System.out.println("\nBreeding an army of dogs");
         for (int i = 1; i  <=  50; i++) {
             register.addDog(new Dog(Integer.toString(i), 
                     Integer.toString(i % 5), i));
@@ -51,11 +55,14 @@ public class DogBreeder {
         Dog.printTotal();
         
         System.out.println(register);
+        
+        System.out.println("\nGetting some dogs from register");
         System.out.println(register.getDog(4));
         System.out.println(register.getDog(1));
         System.out.println(register.getDog(50000));
         
         //canine culling
+        System.out.println("\nCulling dogs");
         for (int i = 5; i <30; i++){
             System.out.println("Dog deleted:");
             System.out.println(register.deleteDog(i));
@@ -65,10 +72,15 @@ public class DogBreeder {
         System.out.println(register.deleteDog(9000));
         System.out.println(register);
         
+        System.out.println("\nTesting the existence of some dogs");
         System.out.println(register.getDogsWhoseNameContains("2198"));
         System.out.println(register.getDogsWhoseNameContains("234"));
         System.out.println(register.getDogsWhoseNameContains("0"));
         System.out.println(register.getDogsWhoseNameContains("21980"));
+        
+        System.out.println("\nSorting dog register by breed");
+        register.groupByBreed();
+        register.printDogBreed();
         // TODO code application logic here
     }
 
