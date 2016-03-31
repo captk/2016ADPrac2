@@ -80,4 +80,16 @@ public class DogRegister {
             System.out.println(aDog.getDogBreed());
         }
     }
+
+    //return a bunch of dogs with conditioner c
+    public Collection<Dog> getByCondition(DogCondition c) {
+        ArrayList<Dog> conditionedDogs = new ArrayList();
+        
+        for (Dog d: this.register){
+            if(c.judge(d)){
+                conditionedDogs.add(d);
+            }
+        }
+        return conditionedDogs;
+    }
 }

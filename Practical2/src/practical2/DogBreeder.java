@@ -5,6 +5,8 @@
  */
 package practical2;
 
+import java.util.Collection;
+
 /**
  *
  * @author k
@@ -81,6 +83,15 @@ public class DogBreeder {
         System.out.println("\nSorting dog register by breed");
         register.groupByBreed();
         register.printDogBreed();
+        
+        System.out.println("\nConditioning Dogs");
+        DogCondition dogConditioner = new DogSequenceAfter20();
+        Collection<Dog> conditionedDogs = register.getByCondition(dogConditioner);
+        
+        for(Dog d: conditionedDogs){
+            System.out.println(d);
+        }
+        
         // TODO code application logic here
     }
 
